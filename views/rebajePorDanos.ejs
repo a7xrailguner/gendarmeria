@@ -1,0 +1,37 @@
+<% include header %>
+
+	<div id="page-title">
+	<h2>Rebajar Por Daños </h2>
+	</div>
+		<div class="row-fluid">
+			<div class="lr-page span4 offset4">
+				<div id="register-box">
+					<div class="row-fluid">
+						<div id="login-form" class="span12">
+							<form name="formulario" method="POST" action="/addRebajaDano" >
+								<div class="row-fluid">
+
+									Seleccione Producto
+                  <div input="input-control select">
+                    <select class="form-control" id="idNombreFarmacologico" name="idNombreFarmacologico">
+                       <option value="">Seleccionar Producto</option>
+                         <% rows.forEach(function(rows){ %>
+                        <option ><%= rows.nombreFarmacologico %></option>
+                       <% }) %>
+                       
+                    </select>
+                    <div></div>
+									Motivo: <input class="span12" id="Motivo" name="Motivo" type="text" value="" placeholder=""/>
+									Numero de Documento: <input class="span12" id="NumeroDocumento" name="NumeroDocumento" type="text" value="" placeholder=""/>
+									Documento: <input class="span12" id="Documento" name="Documento" type="text" value="" placeholder=""/>
+								</div>
+								<div class="actions">
+									<button type="submit" class="btn btn-danger span12">Rebaja de Stock </button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+
+<% include footer %>

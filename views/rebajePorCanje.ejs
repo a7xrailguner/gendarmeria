@@ -1,0 +1,46 @@
+<% include header %>
+<div id="page-title">
+			<h2>Rebaje Por Canje</h2>
+	</div>
+		<div class="row-fluid">
+			<div class="lr-page span4 offset4">
+				<div id="register-box">
+					<div class="row-fluid">
+						<div id="login-form" class="span12">
+							<form name="formulario"  method="POST" action="/rebajeCanje" >
+								<div class="row-fluid">
+									Seleccionar Producto:
+										 <div input="input-control select">
+                    
+                			    <select class="form-control" id="nombreFarmacologico" name="nombreFarmacologico">
+                      			  <option value="">Seleccionar Producto</option>
+                                 <% rows.forEach(function(rows){ %>
+                            	  <option ><%= rows.nombreFarmacologico %></option>
+                       			 <% }) %>
+                       			</select>
+                     			<div></div>
+
+									Unidades para el rebaje: <input class="span12" id="cantidadRebaje" name="cantidadRebaje" type="text" value="" placeholder=""/>
+									Código de Envío: <input class="span12" id="codEnvio" name="codEnvio" type="text" value="" placeholder=""/>
+									Guía de Despacho: <input class="span12" id="guiaDespacho" name="guiaDespacho" type="text" value="" placeholder=""/>
+									Despacho Laboratorio: <input class="span12" id="despachoLab" name="despachoLab" type="text" value="" placeholder=""/>
+									Número de Documento: <input class="span12" id="numeroDocumento" name="numeroDocumento" type="text" value="" placeholder=""/>
+									Número de Guía: <input class="span12" id="numeroGuia" name="numeroGuia" type="text" value="" placeholder=""/>
+								</div>
+								<br>
+								<div class="actions">
+									<button type="submit" class="btn btn-danger span12" onclick="runToast()">Notificar Rebaje</button>
+									<script>
+									    function runToast(mode) {
+									        var toast = Metro.toast.create;
+									        switch (mode) {
+									            default: toast("Salida por canje registrada con exito");
+									        }
+									    }
+									</script>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+<% include footer %>

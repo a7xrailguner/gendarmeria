@@ -1,0 +1,64 @@
+<% include header %>
+<div id="page-title">
+    <h2>Registro de Producto</h2>
+</div>
+  <div class="row-fluid">
+    <div class="lr-page span4 offset4">
+      <div id="register-box">
+        <div class="row-fluid">
+          <div id="login-form" class="span12">
+            <form name="formulario" method="POST" action="/addProducto" >
+              <div class="row-fluid">
+          
+               <h5>Ingreso por canje </h5> 
+        
+               <input name="horizontal_form_c1" type="checkbox"
+                data-role="checkbox" data-caption="Check me out" >
+               <hr>
+        
+              
+               
+
+                Tipo de Insumo:
+									<div class="input-control select" >
+									    <select id="Insumo" name="Insumo" >
+									        <option>Medicamento</option>
+                          <option>Insumo</option>
+									        <option>Insumo Dental</option>
+									    </select>
+									</div>
+                Registro de Lote: <input class="span12" id="Lote" name="Lote" type="text" value="" placeholder=""/>
+                Nombre Farmatológico: <input class="span12" id="NombreFarmatologico" name="NombreFarmatologico" type="text" value="" placeholder=""/>
+                Fecha de Vencimiento: <input class="span12" id="fecVenc" name="fecVenc" type="date" value="" placeholder=""/>
+                Dosis de Medicamento:	<input class="span12" id="Dosis" name="Dosis" type="text" value="" placeholder=""/>
+								Cantidad de Unidad: <input class="span12" id="CantidadUnidad" name="CantidadUnidad" type="text" value="" placeholder=""/>
+                Descripción del Producto: <input class="span12" id="Descripcion" name="Descripcion" type="text" valie="" placeholder=""/>
+                Proveedor:
+                   <div input="input-control select">
+                    <select class="form-control" name="proveedor" id="proveedor">
+                       <option value="">Seleccionar Proveedor</option>
+                         <%  rows.forEach(function(rows){ %>
+                       <option ><%= rows.nombreProveedor %></option>
+                       <% }) %>
+                    </select>
+                  </div>
+                    
+                    Categoria:
+                  <div input="input-control select">
+                    <select class="form-control" name="categoria" id="categoria">
+                       <option value="">Seleccionar Categoria</option>
+                         <% rows.forEach(function(rows){ %>
+                       <option ><%= rows.nombreCategoria %></option>
+                       <% }) %>
+                    </select>
+                 </div>
+              <div class="actions">
+                <button type="submit" class="btn btn-danger span12">Ingresar Proveedor</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+<% include footer %>
